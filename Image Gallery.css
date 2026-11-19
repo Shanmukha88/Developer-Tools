@@ -1,0 +1,37 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: #f6c73bd8;
+    color: #202522;
+    font-family: Arial, sans-serif;
+    padding: 45px 6%;
+}
+
+.gallery-container { max-width: 1200px; margin: auto; }
+.gallery-header { border-bottom: 1px solid #d8d8cf; margin-bottom: 30px; padding-bottom: 25px; }
+.eyebrow { color: #b05d3b; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; }
+h1 { font-family: Georgia, serif; font-size: 72px; font-weight: normal; margin: 15px 0; }
+.intro { color: #69716b; line-height: 1.6; max-width: 400px; }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.gallery-item { background: #d7d5ce; height: 250px; overflow: hidden; position: relative; }
+.gallery-item.wide { grid-column: span 2; }
+.gallery-item img { display: block; height: 100%; object-fit: cover; transition: 0.5s; width: 100%; }
+.gallery-item:after { background: linear-gradient(transparent, rgba(18, 23, 20, 0.85)); content: ''; height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
+.gallery-item:hover img { transform: scale(1.06); }
+.caption { bottom: 20px; color: white; left: 20px; position: absolute; z-index: 1; }
+.caption b, .caption small { display: block; }
+.caption b { font-family: Georgia, serif; font-size: 20px; font-weight: normal; }
+.caption small { font-size: 12px; margin-top: 6px; opacity: 0.8; }
+.gallery-footer { color: #69716b; font-size: 12px; letter-spacing: 2px; margin-top: 22px; text-transform: uppercase; }
+
+@media (max-width: 700px) {
+    body { padding: 30px 20px; }
+    h1 { font-size: 52px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .gallery-item { height: 220px; }
+    .gallery-item.wide { grid-column: span 2; }
+    .caption { bottom: 14px; left: 14px; }
+    .caption b { font-size: 16px; }
+}
+
